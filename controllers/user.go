@@ -1,7 +1,7 @@
 package controllers
 import (
 	"github.com/astaxie/beego"
-	"github.com/who246/GoWebSSH/models"
+	"github.com/cqspirit/GoWebSSH/models"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/utils/pagination"
 	
@@ -13,7 +13,7 @@ func (this *UserController) AddShow(){
 	m := models.User{}
 	this.Data["m"] = m;
 	this.Data["op"] = "a";
-	this.TplNames="user/form.html"
+	this.TplName="user/form.html"
  }
 func (this *UserController) List(){
 	page,err := this.GetInt("pageNum",1);
@@ -34,7 +34,7 @@ func (this *UserController) List(){
 	this.Data["paginator"] = p
 	this.Data["users"] = maps
 	this.Data["keyword"] = keyword
-	this.TplNames="user/list.html"
+	this.TplName="user/list.html"
 }
 func (this *UserController) Add() {
 	username := this.GetString("username") 
@@ -76,7 +76,7 @@ func (this *UserController) ModifyShow() {
 	}
 	this.Data["m"] = m;
 	this.Data["op"] = "m";
-	this.TplNames="user/form.html"
+	this.TplName="user/form.html"
 }
 func (this *UserController) Modify() {
 	id,err := this.GetInt("id",-1)
@@ -102,7 +102,7 @@ func (this *UserController) Login() {
 
    if err!=nil || m.Password != password {
 	this.Data["error"] = "用户名或密码错误";
-	this.TplNames="login.html"
+	this.TplName="login.html"
 	return;
    }
     
@@ -120,7 +120,7 @@ func (this *UserController) Logout() {
 	this.Redirect("/",302)
 }
 func (this *UserController) ShowChangePwd() {
-	this.TplNames="user/cgpwd.html"
+	this.TplName="user/cgpwd.html"
 }
 func (this *UserController) ChangePwd() {
 	newpassword1 := this.GetString("newpassword1","") 

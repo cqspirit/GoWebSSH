@@ -1,7 +1,7 @@
 package controllers
 import (
 	"github.com/astaxie/beego"
-	"github.com/who246/GoWebSSH/models"
+	"github.com/cqspirit/GoWebSSH/models"
 	"github.com/astaxie/beego/orm" 
 	"github.com/astaxie/beego/utils/pagination"
 )
@@ -12,7 +12,7 @@ type CommandController struct {
 	m := models.Command{}
 	this.Data["m"] = m;
 	this.Data["op"] = "a";
-	this.TplNames="command/form.html"
+	this.TplName="command/form.html"
  }
 func (this *CommandController) Add() {
 	cmd := this.GetString("cmd")  
@@ -46,7 +46,7 @@ func (this *CommandController) List(){
 	this.Data["paginator"] = p
 	this.Data["commands"] = maps
 	this.Data["keyword"] = keyword
-	this.TplNames="command/list.html"
+	this.TplName="command/list.html"
 }
 func (this *CommandController) Del() {
 	id,err := this.GetInt("id",-1);
@@ -70,7 +70,7 @@ func (this *CommandController) ModifyShow() {
 	}
 	this.Data["m"] = m;
 	this.Data["op"] = "m";
-	this.TplNames="command/form.html"
+	this.TplName="command/form.html"
 }
 func (this *CommandController) Modify() {
 	id,err := this.GetInt("id",-1)
@@ -96,5 +96,5 @@ func (this *CommandController) CmdFilterList() {
 	}
 	this.List(); 
 	this.Data["server"]=m;
-	this.TplNames="command/table_list.html"
+	this.TplName="command/table_list.html"
 }

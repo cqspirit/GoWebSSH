@@ -6,8 +6,8 @@ import (
 	"time"
 	"io/ioutil"  
 	"encoding/base64"   
-	"github.com/who246/GoWebSSH/ssh_login"
-	"github.com/who246/GoWebSSH/models"
+	"github.com/cqspirit/GoWebSSH/ssh_login"
+	"github.com/cqspirit/GoWebSSH/models"
 	"github.com/astaxie/beego/orm"
 	"strconv"
 )

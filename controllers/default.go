@@ -20,13 +20,13 @@ func (this *MainController) Index() {
 	 beego.Info(password);
    }
 	this.Data["host"] = this.Ctx.Request.Host
-	this.TplNames = "login.html"
+	this.TplName = "login.html"
 }
 func (this *MainController) Admin() {
 	this.Data["host"] = this.Ctx.Request.Host
-	this.TplNames = "index.html"
+	this.TplName = "index.html"
 }
 func (this *MainController) Error() { 
     this.Data["error"] = this.GetString("error"); 
-	this.TplNames = "error.html"
+	this.TplName = "error.html"
 }

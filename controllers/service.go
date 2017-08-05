@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/who246/GoWebSSH/models"
+	"github.com/cqspirit/GoWebSSH/models"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/utils/pagination"
 	
@@ -15,7 +15,7 @@ type ServiceController struct {
 	m := models.Server{}
 	this.Data["m"] = m;
 	this.Data["op"] = "a";
-	this.TplNames="service/form.html"
+	this.TplName="service/form.html"
  }
 func (this *ServiceController) List(){
 	page,err := this.GetInt("pageNum",1);
@@ -38,13 +38,13 @@ func (this *ServiceController) List(){
 	this.Data["paginator"] = p
 	this.Data["servers"] = maps
 	this.Data["keyword"] = keyword
-	this.TplNames="service/list.html"
+	this.TplName="service/list.html"
 }
 func (this *ServiceController) Trim() {
 	this.Data["host"] = this.Ctx.Request.Host
 	this.Data["id"]= this.GetString("id")
 	this.Data["cmdId"]= this.GetString("cmdId") 
-	this.TplNames = "service/term2.html"
+	this.TplName = "service/term2.html"
 }
 
 func (this *ServiceController) Add() {
@@ -83,7 +83,7 @@ func (this *ServiceController) ModifyShow() {
 	}
 	this.Data["m"] = m;
 	this.Data["op"] = "m";
-	this.TplNames="service/form.html"
+	this.TplName="service/form.html"
 }
 func (this *ServiceController) Modify() {
 	id,err := this.GetInt("id",-1)

@@ -1,10 +1,10 @@
 package main
 
 import (
-	_ "github.com/who246/GoWebSSH/routers"
+	_ "github.com/cqspirit/GoWebSSH/routers"
 	"github.com/astaxie/beego"
-	"github.com/who246/GoWebSSH/models"
-	_ "github.com/who246/GoWebSSH/filter"
+	"github.com/cqspirit/GoWebSSH/models"
+	_ "github.com/cqspirit/GoWebSSH/filter"
 )
 
 func main() {
